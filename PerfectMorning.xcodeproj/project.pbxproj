@@ -14,7 +14,7 @@
 		6165AF1E1F7DAA2500537B71 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6165AF1C1F7DAA2500537B71 /* Alamofire.framework */; };
 		6165AF1F1F7DAA2500537B71 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */; };
 		6165AF221F7DAB5500537B71 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */; };
-		6165AF441F7ED12500537B71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165AF431F7ED12500537B71 /* Constants.swift */; };
+		6165AF491F7ED6F100537B71 /* Constants in Resources */ = {isa = PBXBuildFile; fileRef = 6165AF481F7ED6F100537B71 /* Constants */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		6165AF1C1F7DAA2500537B71 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
-		6165AF431F7ED12500537B71 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = PerfectMorning/Constants.swift; sourceTree = "<group>"; };
+		6165AF481F7ED6F100537B71 /* Constants */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Constants; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		614EA1BC1F7D97920091F762 /* PerfectMorning */ = {
 			isa = PBXGroup;
 			children = (
-				6165AF451F7ED55D00537B71 /* Constants */,
+				6165AF481F7ED6F100537B71 /* Constants */,
 				614EA1BD1F7D97920091F762 /* AppDelegate.swift */,
 				614EA1C11F7D97920091F762 /* Main.storyboard */,
 				614EA1C41F7D97920091F762 /* Assets.xcassets */,
@@ -81,15 +81,6 @@
 				6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6165AF451F7ED55D00537B71 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				6165AF431F7ED12500537B71 /* Constants.swift */,
-			);
-			name = Constants;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +145,7 @@
 			files = (
 				614EA1C81F7D97920091F762 /* LaunchScreen.storyboard in Resources */,
 				614EA1C51F7D97920091F762 /* Assets.xcassets in Resources */,
+				6165AF491F7ED6F100537B71 /* Constants in Resources */,
 				614EA1C31F7D97920091F762 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,7 +176,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				614EA1BE1F7D97920091F762 /* AppDelegate.swift in Sources */,
-				6165AF441F7ED12500537B71 /* Constants.swift in Sources */,
 				6165AF221F7DAB5500537B71 /* ArticleListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
