@@ -27,7 +27,7 @@
 		6165AF1C1F7DAA2500537B71 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
-		6165AF431F7ED12500537B71 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6165AF431F7ED12500537B71 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = PerfectMorning/Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +63,13 @@
 		614EA1BC1F7D97920091F762 /* PerfectMorning */ = {
 			isa = PBXGroup;
 			children = (
+				6165AF451F7ED55D00537B71 /* Constants */,
 				614EA1BD1F7D97920091F762 /* AppDelegate.swift */,
 				614EA1C11F7D97920091F762 /* Main.storyboard */,
 				614EA1C41F7D97920091F762 /* Assets.xcassets */,
 				614EA1C61F7D97920091F762 /* LaunchScreen.storyboard */,
 				614EA1C91F7D97920091F762 /* Info.plist */,
 				6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */,
-				6165AF431F7ED12500537B71 /* Constants.swift */,
 			);
 			path = PerfectMorning;
 			sourceTree = "<group>";
@@ -81,6 +81,15 @@
 				6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6165AF451F7ED55D00537B71 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6165AF431F7ED12500537B71 /* Constants.swift */,
+			);
+			name = Constants;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
