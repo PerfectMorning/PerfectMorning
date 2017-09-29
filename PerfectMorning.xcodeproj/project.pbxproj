@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		614EA1BE1F7D97920091F762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614EA1BD1F7D97920091F762 /* AppDelegate.swift */; };
-		614EA1C01F7D97920091F762 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614EA1BF1F7D97920091F762 /* ViewController.swift */; };
 		614EA1C31F7D97920091F762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C11F7D97920091F762 /* Main.storyboard */; };
 		614EA1C51F7D97920091F762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C41F7D97920091F762 /* Assets.xcassets */; };
 		614EA1C81F7D97920091F762 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C61F7D97920091F762 /* LaunchScreen.storyboard */; };
+		6165AF1E1F7DAA2500537B71 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6165AF1C1F7DAA2500537B71 /* Alamofire.framework */; };
+		6165AF1F1F7DAA2500537B71 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */; };
+		6165AF221F7DAB5500537B71 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */; };
+		6165AF441F7ED12500537B71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165AF431F7ED12500537B71 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		614EA1BA1F7D97920091F762 /* PerfectMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614EA1BD1F7D97920091F762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		614EA1BF1F7D97920091F762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		614EA1C21F7D97920091F762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		614EA1C41F7D97920091F762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		614EA1C71F7D97920091F762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		614EA1C91F7D97920091F762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6165AF1C1F7DAA2500537B71 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		6165AF431F7ED12500537B71 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6165AF1E1F7DAA2500537B71 /* Alamofire.framework in Frameworks */,
+				6165AF1F1F7DAA2500537B71 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,7 @@
 			children = (
 				614EA1BC1F7D97920091F762 /* PerfectMorning */,
 				614EA1BB1F7D97920091F762 /* Products */,
+				6165AF1B1F7DAA2500537B71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +64,23 @@
 			isa = PBXGroup;
 			children = (
 				614EA1BD1F7D97920091F762 /* AppDelegate.swift */,
-				614EA1BF1F7D97920091F762 /* ViewController.swift */,
 				614EA1C11F7D97920091F762 /* Main.storyboard */,
 				614EA1C41F7D97920091F762 /* Assets.xcassets */,
 				614EA1C61F7D97920091F762 /* LaunchScreen.storyboard */,
 				614EA1C91F7D97920091F762 /* Info.plist */,
+				6165AF211F7DAB5500537B71 /* ArticleListViewController.swift */,
+				6165AF431F7ED12500537B71 /* Constants.swift */,
 			);
 			path = PerfectMorning;
+			sourceTree = "<group>";
+		};
+		6165AF1B1F7DAA2500537B71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6165AF1C1F7DAA2500537B71 /* Alamofire.framework */,
+				6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +93,7 @@
 				614EA1B61F7D97920091F762 /* Sources */,
 				614EA1B71F7D97920091F762 /* Frameworks */,
 				614EA1B81F7D97920091F762 /* Resources */,
+				6165AF201F7DAA4300537B71 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,13 +151,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6165AF201F7DAA4300537B71 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		614EA1B61F7D97920091F762 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				614EA1C01F7D97920091F762 /* ViewController.swift in Sources */,
 				614EA1BE1F7D97920091F762 /* AppDelegate.swift in Sources */,
+				6165AF441F7ED12500537B71 /* Constants.swift in Sources */,
+				6165AF221F7DAB5500537B71 /* ArticleListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +297,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PerfectMorning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aki.PerfectMorning;
@@ -270,6 +313,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PerfectMorning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aki.PerfectMorning;
@@ -297,6 +344,7 @@
 				614EA1CE1F7D97920091F762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
