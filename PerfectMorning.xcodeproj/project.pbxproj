@@ -12,9 +12,13 @@
 		614EA1C31F7D97920091F762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C11F7D97920091F762 /* Main.storyboard */; };
 		614EA1C51F7D97920091F762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C41F7D97920091F762 /* Assets.xcassets */; };
 		614EA1C81F7D97920091F762 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C61F7D97920091F762 /* LaunchScreen.storyboard */; };
+		8A8344285CADC8571BC42A4A /* Pods_PerfectMorning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC74C4C8D1C99289E6E0149 /* Pods_PerfectMorning.framework */; };
+		A30599BA1F7E066300BFC863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30599B91F7E066300BFC863 /* Constants.swift */; };
+		A30599BC1F7E1E0000BFC863 /* Food2Fork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30599BB1F7E1E0000BFC863 /* Food2Fork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11CDB9659DBB9B732DE2E1DD /* Pods-PerfectMorning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectMorning.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectMorning/Pods-PerfectMorning.release.xcconfig"; sourceTree = "<group>"; };
 		614EA1BA1F7D97920091F762 /* PerfectMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		614EA1BD1F7D97920091F762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		614EA1BF1F7D97920091F762 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,10 @@
 		614EA1C41F7D97920091F762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		614EA1C71F7D97920091F762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		614EA1C91F7D97920091F762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		819F341B2C5A3658D6E270E2 /* Pods-PerfectMorning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectMorning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectMorning/Pods-PerfectMorning.debug.xcconfig"; sourceTree = "<group>"; };
+		9FC74C4C8D1C99289E6E0149 /* Pods_PerfectMorning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectMorning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30599B91F7E066300BFC863 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A30599BB1F7E1E0000BFC863 /* Food2Fork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food2Fork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8344285CADC8571BC42A4A /* Pods_PerfectMorning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E850AF37464CEF926F2428 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FC74C4C8D1C99289E6E0149 /* Pods_PerfectMorning.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		614EA1B11F7D97920091F762 = {
 			isa = PBXGroup;
 			children = (
 				614EA1BC1F7D97920091F762 /* PerfectMorning */,
 				614EA1BB1F7D97920091F762 /* Products */,
+				80CF02F0B7198F467716BE21 /* Pods */,
+				10E850AF37464CEF926F2428 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +79,19 @@
 				614EA1C41F7D97920091F762 /* Assets.xcassets */,
 				614EA1C61F7D97920091F762 /* LaunchScreen.storyboard */,
 				614EA1C91F7D97920091F762 /* Info.plist */,
+				A30599B91F7E066300BFC863 /* Constants.swift */,
+				A30599BB1F7E1E0000BFC863 /* Food2Fork.swift */,
 			);
 			path = PerfectMorning;
+			sourceTree = "<group>";
+		};
+		80CF02F0B7198F467716BE21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				819F341B2C5A3658D6E270E2 /* Pods-PerfectMorning.debug.xcconfig */,
+				11CDB9659DBB9B732DE2E1DD /* Pods-PerfectMorning.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 614EA1CC1F7D97920091F762 /* Build configuration list for PBXNativeTarget "PerfectMorning" */;
 			buildPhases = (
+				2C24F21C919A6FF43A993CDF /* [CP] Check Pods Manifest.lock */,
 				614EA1B61F7D97920091F762 /* Sources */,
 				614EA1B71F7D97920091F762 /* Frameworks */,
 				614EA1B81F7D97920091F762 /* Resources */,
+				20EFD89013A02BD3EE046FEB /* [CP] Embed Pods Frameworks */,
+				9C89E487DB5FEEB5C6DA6EF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +164,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20EFD89013A02BD3EE046FEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PerfectMorning/Pods-PerfectMorning-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectMorning/Pods-PerfectMorning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C24F21C919A6FF43A993CDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PerfectMorning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C89E487DB5FEEB5C6DA6EF2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectMorning/Pods-PerfectMorning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		614EA1B61F7D97920091F762 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +225,8 @@
 			files = (
 				614EA1C01F7D97920091F762 /* ViewController.swift in Sources */,
 				614EA1BE1F7D97920091F762 /* AppDelegate.swift in Sources */,
+				A30599BC1F7E1E0000BFC863 /* Food2Fork.swift in Sources */,
+				A30599BA1F7E066300BFC863 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +345,7 @@
 		};
 		614EA1CD1F7D97920091F762 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 819F341B2C5A3658D6E270E2 /* Pods-PerfectMorning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PerfectMorning/Info.plist;
@@ -268,6 +358,7 @@
 		};
 		614EA1CE1F7D97920091F762 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11CDB9659DBB9B732DE2E1DD /* Pods-PerfectMorning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PerfectMorning/Info.plist;
@@ -297,6 +388,7 @@
 				614EA1CE1F7D97920091F762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
