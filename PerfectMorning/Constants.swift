@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Constants.swift
 //  PerfectMorning
 //
 //  Created by 岡田暁 on 2017-09-29.
@@ -8,7 +8,4 @@
 
 struct Constants {
     static let food2ForkApiKey = APIKeys.Food2ForkApiKey
-    
-    
-    
 }
