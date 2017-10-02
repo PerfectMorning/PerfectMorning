@@ -14,10 +14,7 @@ import SwiftyJSON
 class RecipeListViewController: UIViewController, UITableViewDataSource {
     var recipes: [[String: String?]] = []
     let table = UITableView()
-    let API_KEY = "780eeade7ac75ece204662710ba0a2c0"
-    let constants = Bundle.main.path(forResource: "Constants/Constants", ofType: "swift")
-    
-
+    let API_KEY = Constants.food2ForkApiKey
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Recipe"
