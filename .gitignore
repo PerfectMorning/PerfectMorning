@@ -22,7 +22,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
-PerfectMorning/APIKeys.swift
+APIKeys.swift
 
 ## Obj-C/Swift specific
 *.hmap
