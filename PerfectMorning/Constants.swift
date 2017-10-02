@@ -7,5 +7,6 @@
 //
 
 struct Constants {
-    static let food2ForkApiKey = "<YOUR API KEY>"
+    let food2ForkApiKey = "<YOUR API KAEY>"
+    
 }
