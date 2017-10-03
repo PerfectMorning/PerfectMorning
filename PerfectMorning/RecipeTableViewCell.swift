@@ -32,11 +32,44 @@ class RecipeTableViewCell: UITableViewCell {
         // Use image URL to call recipe image
         let url = URL(string: recipe.imageUrl)
         let data = try? Data(contentsOf: url!)
-        recipeImageView.image = UIImage(data: data!)
-        
+        let image = UIImage(data: data!)
+
+        let screenWidth = UIScreen.main.bounds.size.width
+        recipeImageView.image = cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth*0.8))
+    
         recipeTitleLavel.text = self.recipe?.title
         likeLabel.text = "0 Likes"
         favoriteLabel.text = "💛"
     }
-
+    
+    func cropImage(image :UIImage, w:Int, h:Int) -> UIImage {
+        // Resize the image
+        let origRef    = image.cgImage
+        let origWidth  = Int(origRef!.width)
+        let origHeight = Int(origRef!.height)
+        var resizeWidth:Int = 0
+        var resizeHeight:Int = 0
+        
+        if (origWidth < origHeight) {
+            resizeWidth = w
+            resizeHeight = origHeight * resizeWidth / origWidth
+        } else {
+            resizeHeight = h
+            resizeWidth = origWidth * resizeHeight / origHeight
+        }
+        
+        let resizeSize = CGSize.init(width: CGFloat(resizeWidth), height: CGFloat(resizeHeight))
+        UIGraphicsBeginImageContext(resizeSize)
+        image.draw(in: CGRect.init(x: 0, y: 0, width: CGFloat(resizeWidth), height: CGFloat(resizeHeight)))
+        
+        let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // Crop the image from the center
+        let cropRect  = CGRect.init(x: CGFloat((resizeWidth - w) / 2), y: CGFloat((resizeHeight - h) / 2), width: CGFloat(w), height: CGFloat(h))
+        let cropRef   = resizeImage!.cgImage!.cropping(to: cropRect)
+        let cropImage = UIImage(cgImage: cropRef!)
+        
+        return cropImage
+    }
 }
