@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		614EA1BE1F7D97920091F762 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614EA1BD1F7D97920091F762 /* AppDelegate.swift */; };
 		614EA1C51F7D97920091F762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 614EA1C41F7D97920091F762 /* Assets.xcassets */; };
+		6158BA081F8365D000C5485D /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158BA071F8365D000C5485D /* MenuTableViewController.swift */; };
 		6165AF1E1F7DAA2500537B71 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6165AF1C1F7DAA2500537B71 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6165AF1F1F7DAA2500537B71 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */; };
 		A30599BD1F7F04B300BFC863 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165AF211F7DAB5500537B71 /* RecipeTableViewController.swift */; };
@@ -27,6 +28,7 @@
 		614EA1BD1F7D97920091F762 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		614EA1C41F7D97920091F762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		614EA1C91F7D97920091F762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6158BA071F8365D000C5485D /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		6165AF1C1F7DAA2500537B71 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		6165AF1D1F7DAA2500537B71 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		6165AF211F7DAB5500537B71 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				A3B074E01F80984900CCC977 /* Main.storyboard */,
 				A32DA34C1F808B3E0077FA65 /* RecipeTableViewCell.xib */,
 				A3B074DF1F80984800CCC977 /* LaunchScreen.storyboard */,
+				6158BA071F8365D000C5485D /* MenuTableViewController.swift */,
 				614EA1BD1F7D97920091F762 /* AppDelegate.swift */,
 				A30599C51F7F661000BFC863 /* Recipe.swift */,
 				A30599C11F7F5CAE00BFC863 /* Constants.swift */,
@@ -193,6 +196,7 @@
 				A30CE1E11F82ED1C00A7F4E8 /* APIKeys.swift in Sources */,
 				614EA1BE1F7D97920091F762 /* AppDelegate.swift in Sources */,
 				A30599BD1F7F04B300BFC863 /* RecipeTableViewController.swift in Sources */,
+				6158BA081F8365D000C5485D /* MenuTableViewController.swift in Sources */,
 				A30599C21F7F5CAE00BFC863 /* Constants.swift in Sources */,
 				A32DA34D1F808B3E0077FA65 /* RecipeTableViewCell.swift in Sources */,
 				A30599C61F7F661000BFC863 /* Recipe.swift in Sources */,
