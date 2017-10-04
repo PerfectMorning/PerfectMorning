@@ -40,6 +40,38 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabB
         recipeCell.update(recipe: recipes[indexPath.row])
         return recipeCell
     }
+    
+    var selectedRecipe: Recipe?
+
+    // When a cell is selected
+    func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(recipes[indexPath.row])
+
+        // Search and set recipeData from [indexPath.row]
+        selectedRecipe = Recipe(recipeId: recipes[indexPath.row].recipeId,
+                                socialRank: recipes[indexPath.row].socialRank,
+                                f2fUrl: recipes[indexPath.row].f2fUrl,
+                                title: recipes[indexPath.row].title,
+                                imageUrl: recipes[indexPath.row].imageUrl,
+                                publisher: recipes[indexPath.row].publisher,
+                                publisherUrl: recipes[indexPath.row].publisherUrl,
+                                sourceUrl: recipes[indexPath.row].sourceUrl
+        )
+        if selectedRecipe != nil {
+            // Call segue to go to DetailViewController
+//            performSegue(withIdentifier: "toDetailViewController", sender: nil)
+            performSegue(withIdentifier: "toDetailViewController",sender: nil)
+        }
+    }
+    
+    // Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toDetailViewController") {
+            let nextVC = (segue.destination as? DetailViewController)!
+            // Set recipeData in DetailViewController
+            nextVC.selectedRecipe = selectedRecipe
+        }
+    }
 
     func getRecipes() {
         let url = "http://food2fork.com/api/search?key=\(Constants.food2ForkApiKey)&q=shredded%20"

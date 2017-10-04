@@ -16,26 +16,23 @@ class RecipeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     var recipe: Recipe?
     
     func update(recipe: Recipe) {
         self.recipe = recipe;
-
         // Use image URL to call recipe image
         let url = URL(string: recipe.imageUrl)
         let data = try? Data(contentsOf: url!)
         let image = UIImage(data: data!)
 
         let screenWidth = UIScreen.main.bounds.size.width
-        recipeImageView.image = cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth*0.8))
+        recipeImageView.image = cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth * 0.8))
         
         // Style: Corner radius
         recipeImageView.layer.cornerRadius = 10
