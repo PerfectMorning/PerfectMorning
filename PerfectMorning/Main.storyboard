@@ -12,7 +12,7 @@
         <!--Recipe Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecipeTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="RecipeTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,11 +35,43 @@
                     <navigationItem key="navigationItem" id="ZAu-4G-4Jc"/>
                     <connections>
                         <outlet property="mainTableView" destination="WYW-he-Goc" id="CRd-Xa-Kxb"/>
+                        <segue destination="gGI-07-oDr" kind="push" identifier="toDetailViewController" id="zTd-cK-4bI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607" y="-585"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="LRq-94-vSw">
+            <objects>
+                <viewController id="gGI-07-oDr" customClass="DetailViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ODS-cw-8EG"/>
+                        <viewControllerLayoutGuide type="bottom" id="J3A-XC-HOs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bDp-B6-dsK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-g7-voy">
+                                <rect key="frame" x="22" y="269" width="331" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GgC-TF-CQ3"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="2rh-g7-voy" id="FWq-GD-7f2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FqE-pN-iH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="-585.1574212893554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2GY-aw-5fT">
