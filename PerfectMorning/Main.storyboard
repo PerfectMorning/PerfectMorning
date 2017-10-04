@@ -75,6 +75,9 @@
                                                     <rect key="frame" x="271" y="46" width="104" height="96"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="arrow_right"/>
+                                                    <connections>
+                                                        <segue destination="BYZ-38-t0r" kind="show" id="kqD-w5-Lla"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPY-BX-mll">
                                                     <rect key="frame" x="94" y="67" width="148" height="46"/>
