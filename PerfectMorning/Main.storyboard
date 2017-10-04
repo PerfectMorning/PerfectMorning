@@ -65,32 +65,47 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-0Z-26T">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-0Z-26T">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="FUq-P0-hu7"/>
+                                                        <constraint firstAttribute="width" constant="375" id="L4z-0o-Gpc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk3-LL-UlQ">
-                                                    <rect key="frame" x="271" y="46" width="104" height="96"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pR1-EB-6Yf">
+                                                    <rect key="frame" x="80" y="65" width="215" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="arrow_right"/>
-                                                    <connections>
-                                                        <segue destination="BYZ-38-t0r" kind="show" id="kqD-w5-Lla"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPY-BX-mll">
-                                                    <rect key="frame" x="94" y="67" width="148" height="46"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPY-BX-mll">
+                                                            <rect key="frame" x="33" y="4" width="148" height="46"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szs-j8-qIi">
+                                                    <rect key="frame" x="281" y="48" width="94" height="86"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <subviews>
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk3-LL-UlQ">
+                                                            <rect key="frame" x="8" y="6" width="74" height="74"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button" image="arrow_right"/>
+                                                            <connections>
+                                                                <segue destination="BYZ-38-t0r" kind="show" id="kqD-w5-Lla"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7qS-0Z-26T" firstAttribute="top" secondItem="9zU-b2-F3g" secondAttribute="top" id="UDo-Lv-F5U"/>
-                                                <constraint firstAttribute="bottom" secondItem="7qS-0Z-26T" secondAttribute="bottom" id="dV6-3y-b2w"/>
-                                                <constraint firstAttribute="trailing" secondItem="7qS-0Z-26T" secondAttribute="trailing" id="n82-D7-DlL"/>
+                                                <constraint firstItem="7qS-0Z-26T" firstAttribute="top" secondItem="9zU-b2-F3g" secondAttribute="top" id="nmb-H6-1yK"/>
+                                                <constraint firstAttribute="bottom" secondItem="7qS-0Z-26T" secondAttribute="bottom" id="qpy-zX-hy6"/>
+                                                <constraint firstAttribute="trailing" secondItem="7qS-0Z-26T" secondAttribute="trailing" id="twH-8s-bcc"/>
                                                 <constraint firstItem="7qS-0Z-26T" firstAttribute="leading" secondItem="9zU-b2-F3g" secondAttribute="leading" id="zdz-Oh-fMv"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -106,7 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SZY-Lb-CcI"/>
                     <connections>
-                        <outlet property="menuaTableView" destination="Xio-Ru-pUN" id="gGM-UF-3Tp"/>
+                        <outlet property="menuTableView" destination="Xio-Ru-pUN" id="hTL-hX-Q2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbu-V5-vQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
