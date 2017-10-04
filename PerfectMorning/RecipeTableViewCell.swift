@@ -36,7 +36,12 @@ class RecipeTableViewCell: UITableViewCell {
 
         let screenWidth = UIScreen.main.bounds.size.width
         recipeImageView.image = cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth*0.8))
+        
+        // Style: Corner radius
+        recipeImageView.layer.cornerRadius = 10
+        recipeImageView.clipsToBounds = true
     
+        // Title
         recipeTitleLavel.text = self.recipe?.title
         likeLabel.text = "0 Likes"
         favoriteLabel.text = "💛"
