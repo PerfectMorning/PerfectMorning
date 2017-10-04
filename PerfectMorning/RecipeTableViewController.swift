@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabBarDelegate {
+class RecipeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var mainTableView: UITableView!
     var recipes: [Recipe] = []
 
@@ -21,6 +21,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabB
         mainTableView.rowHeight = 350
         mainTableView.frame = view.frame
         view.addSubview(mainTableView)
+        mainTableView.delegate = self
         mainTableView.dataSource = self
         
         // Nib for RecipeTableViewCell
