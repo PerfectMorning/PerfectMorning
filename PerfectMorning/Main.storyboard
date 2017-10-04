@@ -97,8 +97,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-1m-YE8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-g7-voy">
-                                <rect key="frame" x="22" y="269" width="331" height="128"/>
+                                <rect key="frame" x="22" y="358" width="331" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -109,12 +113,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="GgC-TF-CQ3"/>
                     <connections>
+                        <outlet property="imageView" destination="Wvd-1m-YE8" id="vdK-u7-8e0"/>
                         <outlet property="titleLabel" destination="2rh-g7-voy" id="FWq-GD-7f2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqE-pN-iH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="-585.1574212893554"/>
+            <point key="canvasLocation" x="2120.8000000000002" y="-589.65517241379314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aCs-5y-g58">

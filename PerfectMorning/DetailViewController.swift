@@ -9,11 +9,17 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     var selectedRecipe: Recipe!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let url = URL(string: selectedRecipe.imageUrl)
+        let data = try? Data(contentsOf: url!)
+        imageView.image = UIImage(data: data!)
+
         titleLabel.text = selectedRecipe.title
 
     }
