@@ -3,7 +3,7 @@
 //  PerfectMorning
 //
 //  Created by Julia on 2017/09/29.
-//  Copyright © 2017 岡田暁. All rights reserved.
+//  Copyright © 2017 Aki. All rights reserved.
 //
 
 import UIKit

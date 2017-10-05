@@ -65,6 +65,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mM9-r3-cku" id="9zU-b2-F3g">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -140,4 +141,7 @@
             <point key="canvasLocation" x="-50" y="-588"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow_right" width="96" height="96"/>
+    </resources>
 </document>
