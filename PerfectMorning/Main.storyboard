@@ -65,7 +65,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mM9-r3-cku" id="9zU-b2-F3g">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -98,10 +97,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-1m-YE8">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khy-Wz-raA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-1m-YE8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-g7-voy">
                                 <rect key="frame" x="22" y="358" width="331" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,7 +120,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="GgC-TF-CQ3"/>
                     <connections>
-                        <outlet property="imageView" destination="Wvd-1m-YE8" id="vdK-u7-8e0"/>
+                        <outlet property="detailView" destination="Khy-Wz-raA" id="xDT-MJ-Afi"/>
+                        <outlet property="imageView" destination="Wvd-1m-YE8" id="gPS-q3-xer"/>
                         <outlet property="titleLabel" destination="2rh-g7-voy" id="FWq-GD-7f2"/>
                     </connections>
                 </viewController>
@@ -141,7 +148,4 @@
             <point key="canvasLocation" x="-50" y="-588"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrow_right" width="96" height="96"/>
-    </resources>
 </document>
