@@ -2,8 +2,8 @@
 //  MenuTableViewCell.swift
 //  PerfectMorning
 //
-//  Created by 岡田暁 on 2017-10-02.
-//  Copyright © 2017 岡田暁. All rights reserved.
+//  Created by Aki on 2017-10-02.
+//  Copyright © 2017 Aki. All rights reserved.
 //
 
 import UIKit
@@ -11,13 +11,11 @@ import UIKit
 class MenuTableViewCell: UITableViewCell {
 
     @IBOutlet var menuColorImage: UIImageView!
-    
     @IBOutlet var menuView: UIImageView!
     @IBOutlet var menuImage: UIImageView!
-    @IBOutlet var menuTitle: UILabel!
-    @IBOutlet var menuButton: UIButton!
+    @IBOutlet var menuArrowButton: UIButton!
+    @IBOutlet var menuTitleButton: UIButton!
     
-  
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,14 +30,13 @@ class MenuTableViewCell: UITableViewCell {
     
     var menu: Menu?
     func setCell(menu: Menu) {
-    
         self.menu = menu
         self.menuColorImage.backgroundColor = menu.color
         self.menuImage.image = menu.image
         self.menuColorImage.alpha = 0.8
-        self.menuTitle.text = menu.title
-        menuButton.setImage(#imageLiteral(resourceName: "arrow_right"), for: .normal)
-        menuButton.tintColor = UIColor.white
-
+        self.menuTitleButton.setTitle(menu.title, for: .normal)
+        self.menuTitleButton.tintColor = UIColor.white
+        self.menuArrowButton.setImage(#imageLiteral(resourceName: "arrow_right"), for: .normal)
+        self.menuArrowButton.tintColor = UIColor.white
     }
 }
