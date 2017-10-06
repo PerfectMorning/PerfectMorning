@@ -8,15 +8,12 @@
 
 import UIKit
 
-class MenuTableViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
+class MenuTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
-    
-    
     @IBOutlet var menuTableView: UITableView!
   
     var menues: [Menu] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Menu"
@@ -24,12 +21,14 @@ class MenuTableViewController: UIViewController , UITableViewDataSource, UITable
         menuTableView.frame = view.frame
         view.addSubview(menuTableView)
         menuTableView.dataSource = self
+        menuTableView.delegate = self
         self.setMenu()
         
         // Nib for RecipeTableViewCell
         let nib = UINib(nibName: "MenuTableViewCell", bundle: nil)
         menuTableView.register(nib, forCellReuseIdentifier: "MenuTableCell")
-
+        
+        goToRecipeList(item: selectedMenu)
     }
     
     func setMenu(){
@@ -53,5 +52,39 @@ class MenuTableViewController: UIViewController , UITableViewDataSource, UITable
 
         return menuCell
     }
+    
+    var selectedMenu: Menu?
+    // When a cell is selected
+    func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        if selectedMenu != nil {
+            performSegue(withIdentifier: "toRecipeTableViewController",sender: nil)
+        }
+    }
+    
+    // Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toRecipeTableViewController") {
+            let nextVC = (segue.destination as? RecipeTableViewController)!
+            nextVC.selectedMenu = selectedMenu
+        }
+    }
+    
+    func goToRecipeList(item: Menu?) {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "recipe") as! RecipeTableViewController
+        self.present(nextView, animated: true, completion: nil)
+
+//        let recipeVC = UIStoryboard(name: "Main", bundle: nil)(withIdentifier: "toRecipeTableViewController") as! RecipeTableViewController
+//        let nav = UINavigationController(rootViewController: recipeVC)
+//        self.present(nav, animated: true, completion: nil)
+        
+//        let nextVC = storyboard.instantiateViewController(withIdentifier: "recipe") as! RecipeTableViewController
+//        self.present(nextVC, animated: true, completion: nil)
+//
+//        let nextVC: UIStoryboard = UIStoryboard(name: "recipe", bundle: nil)
+//            .instantiateViewController(withIdentifier: "toRecipeTableViewController") as! RecipeTableViewController
+//        let nav = UINavigationController(rootViewController: nextVC)
+//        self.present(nav, animated: true, completion: nil)
+    }
 }

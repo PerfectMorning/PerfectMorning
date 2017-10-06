@@ -13,6 +13,7 @@ import SwiftyJSON
 class RecipeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var mainTableView: UITableView!
     var recipes: [Recipe] = []
+    var selectedMenu: Menu!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,6 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     var selectedRecipe: Recipe?
-
     // When a cell is selected
     func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(recipes[indexPath.row])
@@ -60,7 +60,6 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         )
         if selectedRecipe != nil {
             // Call segue to go to DetailViewController
-//            performSegue(withIdentifier: "toDetailViewController", sender: nil)
             performSegue(withIdentifier: "toDetailViewController",sender: nil)
         }
     }
@@ -68,9 +67,17 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     // Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toDetailViewController") {
-            let nextVC = (segue.destination as? DetailViewController)!
+//            let nextVC = (segue.destination as? DetailViewController)!
             // Set recipeData in DetailViewController
-            nextVC.selectedRecipe = selectedRecipe
+//            nextVC.selectedRecipe = selectedRecipe
+//            let nextVC = UIStoryboard(name: "Main", bundle: nil)
+//                .instantiateViewController(withIdentifier: "toDetailViewController") as! DetailViewController
+//            self.navigationController?.pushViewController(nextVC , animated: true)
+
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+            nextView.selectedRecipe = selectedRecipe
+            //self.present(nextView, animated: true, completion: nil)
         }
     }
 

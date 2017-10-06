@@ -12,7 +12,7 @@
         <!--Recipe Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="RecipeTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recipe" id="BYZ-38-t0r" customClass="RecipeTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="ZAu-4G-4Jc"/>
                     <connections>
                         <outlet property="mainTableView" destination="WYW-he-Goc" id="CRd-Xa-Kxb"/>
-                        <segue destination="gGI-07-oDr" kind="push" identifier="toDetailViewController" id="zTd-cK-4bI"/>
+                        <segue destination="gGI-07-oDr" kind="push" identifier="toDetailViewController" id="vjf-wT-Iqr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -45,7 +45,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="hoz-QT-sze">
             <objects>
-                <viewController id="LfW-rL-cM8" customClass="MenuTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="LfW-rL-cM8" customClass="MenuTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ycy-dc-GAP"/>
                         <viewControllerLayoutGuide type="bottom" id="pYs-Rm-3PZ"/>
@@ -59,11 +59,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="185" id="mM9-r3-cku">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="185" id="mM9-r3-cku">
                                         <rect key="frame" x="0.0" y="28" width="375" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mM9-r3-cku" id="9zU-b2-F3g">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -79,6 +79,7 @@
                     <navigationItem key="navigationItem" id="SZY-Lb-CcI"/>
                     <connections>
                         <outlet property="menuTableView" destination="Xio-Ru-pUN" id="hTL-hX-Q2R"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="toMenuTableViewController" id="Tw0-JQ-b0s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbu-V5-vQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +89,7 @@
         <!--Detail View Controller-->
         <scene sceneID="LRq-94-vSw">
             <objects>
-                <viewController id="gGI-07-oDr" customClass="DetailViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail" id="gGI-07-oDr" customClass="DetailViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ODS-cw-8EG"/>
                         <viewControllerLayoutGuide type="bottom" id="J3A-XC-HOs"/>
