@@ -73,18 +73,6 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     func goToRecipeList(item: Menu?) {
         let storyboard: UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "recipe") as! RecipeTableViewController
-        self.present(nextView, animated: true, completion: nil)
-
-//        let recipeVC = UIStoryboard(name: "Main", bundle: nil)(withIdentifier: "toRecipeTableViewController") as! RecipeTableViewController
-//        let nav = UINavigationController(rootViewController: recipeVC)
-//        self.present(nav, animated: true, completion: nil)
-        
-//        let nextVC = storyboard.instantiateViewController(withIdentifier: "recipe") as! RecipeTableViewController
-//        self.present(nextVC, animated: true, completion: nil)
-//
-//        let nextVC: UIStoryboard = UIStoryboard(name: "recipe", bundle: nil)
-//            .instantiateViewController(withIdentifier: "toRecipeTableViewController") as! RecipeTableViewController
-//        let nav = UINavigationController(rootViewController: nextVC)
-//        self.present(nav, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
 }

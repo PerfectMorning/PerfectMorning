@@ -13,6 +13,7 @@ import SwiftyJSON
 class RecipeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var mainTableView: UITableView!
     var recipes: [Recipe] = []
+    var selectedRecipe: Recipe?
     var selectedMenu: Menu!
 
     override func viewDidLoad() {
@@ -42,8 +43,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         recipeCell.update(recipe: recipes[indexPath.row])
         return recipeCell
     }
-    
-    var selectedRecipe: Recipe?
+
     // When a cell is selected
     func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(recipes[indexPath.row])
@@ -66,20 +66,11 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if (segue.identifier == "toDetailViewController") {
-//            let nextVC = (segue.destination as? DetailViewController)!
-            // Set recipeData in DetailViewController
-//            nextVC.selectedRecipe = selectedRecipe
-//            let nextVC = UIStoryboard(name: "Main", bundle: nil)
-//                .instantiateViewController(withIdentifier: "toDetailViewController") as! DetailViewController
-//            self.navigationController?.pushViewController(nextVC , animated: true)
-
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailViewController
-            nextView.selectedRecipe = selectedRecipe
-            //self.present(nextView, animated: true, completion: nil)
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+        nextView.selectedRecipe = selectedRecipe
+        self.navigationController?.pushViewController(nextView, animated: true)
         }
-    }
 
     func getRecipes() {
         let url = "http://food2fork.com/api/search?key=\(Constants.food2ForkApiKey)&q=shredded%20"
