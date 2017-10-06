@@ -46,8 +46,6 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     // When a cell is selected
     func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(recipes[indexPath.row])
-
         // Search and set recipeData from [indexPath.row]
         selectedRecipe = Recipe(recipeId: recipes[indexPath.row].recipeId,
                                 socialRank: recipes[indexPath.row].socialRank,
@@ -59,18 +57,13 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
                                 sourceUrl: recipes[indexPath.row].sourceUrl
         )
         if selectedRecipe != nil {
-            // Call segue to go to DetailViewController
-            performSegue(withIdentifier: "toDetailViewController",sender: nil)
+            // Go to detail view and pass recipe data
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+            nextView.selectedRecipe = selectedRecipe
+            self.navigationController?.pushViewController(nextView, animated: true)
         }
     }
-    
-    // Prepare Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailViewController
-        nextView.selectedRecipe = selectedRecipe
-        self.navigationController?.pushViewController(nextView, animated: true)
-        }
 
     func getRecipes() {
         let url = "http://food2fork.com/api/search?key=\(Constants.food2ForkApiKey)&q=shredded%20"
