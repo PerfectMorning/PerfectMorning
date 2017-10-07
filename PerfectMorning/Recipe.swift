@@ -9,12 +9,9 @@
 import UIKit
 
 struct Recipe {
-    var recipeId: String
-    var socialRank: Int
-    var f2fUrl: String
-    var title: String
-    var imageUrl: String
-    var publisher: String
-    var publisherUrl: String
-    var sourceUrl: String
+    var recipeName: String
+    var totalTimeInSeconds: Int
+    var id: String
+    var imageUrlsBySize: String
+    var ingredients: [String] 
 }

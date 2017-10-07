@@ -22,7 +22,7 @@ class RecipeTableViewCell: UITableViewCell {
     func update(recipe: Recipe) {
         self.recipe = recipe;
         // Use image URL to call recipe image
-        let url = URL(string: recipe.imageUrl)
+        let url = URL(string: recipe.imageUrlsBySize)
         let data = try? Data(contentsOf: url!)
         let image = UIImage(data: data!)
 
@@ -34,7 +34,7 @@ class RecipeTableViewCell: UITableViewCell {
         recipeImageView.clipsToBounds = true
     
         // Title
-        recipeTitleLavel.text = self.recipe?.title
+        recipeTitleLavel.text = self.recipe?.recipeName
         likeLabel.text = "0 Likes"
         favoriteLabel.text = "💛"
     }
