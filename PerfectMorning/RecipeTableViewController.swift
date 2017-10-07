@@ -18,7 +18,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Recipe"
+        title = selectedMenu.title
 
         mainTableView.rowHeight = 350
         mainTableView.frame = view.frame
@@ -47,15 +47,8 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     // When a cell is selected
     func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Search and set recipeData from [indexPath.row]
-        selectedRecipe = Recipe(recipeId: recipes[indexPath.row].recipeId,
-                                socialRank: recipes[indexPath.row].socialRank,
-                                f2fUrl: recipes[indexPath.row].f2fUrl,
-                                title: recipes[indexPath.row].title,
-                                imageUrl: recipes[indexPath.row].imageUrl,
-                                publisher: recipes[indexPath.row].publisher,
-                                publisherUrl: recipes[indexPath.row].publisherUrl,
-                                sourceUrl: recipes[indexPath.row].sourceUrl
-        )
+        selectedRecipe = recipes[indexPath.row]
+
         if selectedRecipe != nil {
             // Go to detail view and pass recipe data
             let storyboard: UIStoryboard = self.storyboard!
