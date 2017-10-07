@@ -9,26 +9,23 @@
 import UIKit
 
 class MenuTableViewCell: UITableViewCell {
-
     @IBOutlet var menuColorImage: UIImageView!
     @IBOutlet var menuView: UIImageView!
     @IBOutlet var menuImage: UIImageView!
     @IBOutlet var menuArrowButton: UIButton!
-    @IBOutlet var menuTitleButton: UIButton!
-    
-    
+    @IBOutlet weak var menuTitleButton: UIButton!
+    var menuTableViewCellDelegate: menuTableViewCellDelegate?
+    var menu: Menu?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    var menu: Menu?
+    @IBAction func menuTitleButton(_ sender: UIButton) {
+        // Go to next view when tapped
+        self.menuTableViewCellDelegate?.onButtonTapped(position: sender.tag)
+    }
+
     func setCell(menu: Menu) {
         self.menu = menu
         self.menuColorImage.backgroundColor = menu.color

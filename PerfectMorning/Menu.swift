@@ -12,6 +12,4 @@ struct Menu {
     var title: String
     var image: UIImage
     var color: UIColor
-  
 }
-

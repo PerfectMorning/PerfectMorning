@@ -38,6 +38,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="menuTitleButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fjt-M8-K0t"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
@@ -46,7 +49,7 @@
                 <outlet property="menuArrowButton" destination="KwX-4T-SBQ" id="0dw-Si-wPP"/>
                 <outlet property="menuColorImage" destination="yiH-mS-TBS" id="leM-jl-zx0"/>
                 <outlet property="menuImage" destination="7bM-ls-vvl" id="29h-fA-PNc"/>
-                <outlet property="menuTitleButton" destination="0Kg-22-O2X" id="AoC-ef-SsJ"/>
+                <outlet property="menuTitleButton" destination="0Kg-22-O2X" id="EsF-hz-5Ij"/>
                 <outlet property="menuView" destination="7bM-ls-vvl" id="aGk-ub-MNY"/>
             </connections>
             <point key="canvasLocation" x="15.5" y="119"/>
