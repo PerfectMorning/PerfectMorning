@@ -13,7 +13,6 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     var menus: [Menu] = []
     var selectedMenu: Menu?
     var selectedPosition: Int?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +51,12 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
         menuCell.setCell(menu: menus[indexPath.row])
         return menuCell
     }
-
-    // When a cell is selected
-//    func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // Set selected menu data
-//        selectedMenu = menus[indexPath.row]
-//
-//        if selectedMenu != nil {
-//            // Go to recipe view and pass recipe data
-//            let storyboard: UIStoryboard = self.storyboard!
-//            let nextView = storyboard.instantiateViewController(withIdentifier: "recipe") as! RecipeTableViewController
-//            nextView.selectedMenu = selectedMenu
-//            self.navigationController?.pushViewController(nextView, animated: true)
-//        }
-//    }
     
+    var selectedMenu: Menu?
+    // When a cell is selected
+    func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    // When a button on a cell is selected 
     func onButtonTapped(position: Int) {
         // Set selected menu data
         selectedMenu = menus[position]
