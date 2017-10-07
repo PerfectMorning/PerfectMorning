@@ -12,7 +12,7 @@
         <!--Recipe Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="main" id="BYZ-38-t0r" customClass="RecipeTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recipe" id="BYZ-38-t0r" customClass="RecipeTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="ZAu-4G-4Jc"/>
                     <connections>
                         <outlet property="mainTableView" destination="WYW-he-Goc" id="CRd-Xa-Kxb"/>
-                        <segue destination="gGI-07-oDr" kind="push" identifier="toDetailViewController" id="zTd-cK-4bI"/>
+                        <segue destination="gGI-07-oDr" kind="push" identifier="toDetailViewController" id="vjf-wT-Iqr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -45,7 +45,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="hoz-QT-sze">
             <objects>
-                <viewController id="LfW-rL-cM8" customClass="MenuTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="LfW-rL-cM8" customClass="MenuTableViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ycy-dc-GAP"/>
                         <viewControllerLayoutGuide type="bottom" id="pYs-Rm-3PZ"/>
@@ -59,13 +59,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="185" id="mM9-r3-cku">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="185" id="mM9-r3-cku">
                                         <rect key="frame" x="0.0" y="28" width="375" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mM9-r3-cku" id="9zU-b2-F3g">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -80,6 +79,7 @@
                     <navigationItem key="navigationItem" id="SZY-Lb-CcI"/>
                     <connections>
                         <outlet property="menuTableView" destination="Xio-Ru-pUN" id="hTL-hX-Q2R"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="toMenuTableViewController" id="Tw0-JQ-b0s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbu-V5-vQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,7 +89,7 @@
         <!--Detail View Controller-->
         <scene sceneID="LRq-94-vSw">
             <objects>
-                <viewController id="gGI-07-oDr" customClass="DetailViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail" id="gGI-07-oDr" customClass="DetailViewController" customModule="PerfectMorning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ODS-cw-8EG"/>
                         <viewControllerLayoutGuide type="bottom" id="J3A-XC-HOs"/>
@@ -98,23 +98,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-1m-YE8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8y-iZ-TaR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-g7-voy">
-                                <rect key="frame" x="22" y="358" width="331" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khy-Wz-raA">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="350"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-1m-YE8">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-g7-voy">
+                                        <rect key="frame" x="18" y="304" width="287" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cooking time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0A-b4-6RK">
+                                        <rect key="frame" x="18" y="337" width="287" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j93-r8-ahb">
+                                        <rect key="frame" x="302" y="302" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="fav_heart"/>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uIE-VS-Hgc">
+                                        <rect key="frame" x="103" y="370" width="164" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2B-qB-MEp">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="Overview"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSP-5q-gYT">
+                                                <rect key="frame" x="87" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="Ingredients"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFO-yJ-m01">
+                                        <rect key="frame" x="18" y="408" width="335" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="GgC-TF-CQ3"/>
                     <connections>
-                        <outlet property="imageView" destination="Wvd-1m-YE8" id="vdK-u7-8e0"/>
+                        <outlet property="cooktimeLabel" destination="a0A-b4-6RK" id="MbZ-8a-pgs"/>
+                        <outlet property="descriptionLabel" destination="aFO-yJ-m01" id="l2c-Dy-ixp"/>
+                        <outlet property="detailView" destination="Khy-Wz-raA" id="xDT-MJ-Afi"/>
+                        <outlet property="favButton" destination="j93-r8-ahb" id="U4J-0x-8uI"/>
+                        <outlet property="imageView" destination="Wvd-1m-YE8" id="gPS-q3-xer"/>
+                        <outlet property="ingredButton" destination="PSP-5q-gYT" id="tzI-IO-7ZK"/>
+                        <outlet property="overviewButton" destination="S2B-qB-MEp" id="q41-Mo-pzb"/>
                         <outlet property="titleLabel" destination="2rh-g7-voy" id="FWq-GD-7f2"/>
                     </connections>
                 </viewController>
@@ -142,6 +194,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_right" width="96" height="96"/>
+        <image name="fav_heart" width="176" height="176"/>
     </resources>
 </document>

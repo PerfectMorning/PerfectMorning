@@ -13,16 +13,11 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeTitleLavel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var favoriteLabel: UILabel!
-    
+    var recipe: Recipe?
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    var recipe: Recipe?
     
     func update(recipe: Recipe) {
         self.recipe = recipe;

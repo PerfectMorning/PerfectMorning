@@ -18,10 +18,12 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     var heighRecipes = Yummly.heighRecipes
     var elegantRecipes = Yummly.elegantRecipes
     var yummly = Yummly()
+    var selectedRecipe: Recipe?
+    var selectedMenu: Menu!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Recipe"
+        title = selectedMenu.title
 
         mainTableView.rowHeight = 350
         mainTableView.frame = view.frame
@@ -46,35 +48,27 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         recipeCell.update(recipe: recipes[indexPath.row])
         return recipeCell
     }
-    
-    var selectedRecipe: Recipe?
 
     // When a cell is selected
     func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(recipes[indexPath.row])
-
         // Search and set recipeData from [indexPath.row]
+
         selectedRecipe = Recipe(recipeName: recipes[indexPath.row].recipeName,
                                 totalTimeInSeconds: recipes[indexPath.row].totalTimeInSeconds,
                                 id: recipes[indexPath.row].id,
                                 imageUrlsBySize: recipes[indexPath.row].imageUrlsBySize,
                                 ingredients: recipes[indexPath.row].ingredients
         )
+        selectedRecipe = recipes[indexPath.row]
         if selectedRecipe != nil {
-            // Call segue to go to DetailViewController
-            performSegue(withIdentifier: "toDetailViewController",sender: nil)
+            // Go to detail view and pass recipe data
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+            nextView.selectedRecipe = selectedRecipe
+            self.navigationController?.pushViewController(nextView, animated: true)
+            
         }
     }
-    
-    // Prepare Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        if (segue.identifier == "toDetailViewController") {
-            let nextVC = (segue.destination as? DetailViewController)!
-            // Set recipeData in DetailViewController
-            nextVC.selectedRecipe = selectedRecipe
-        }
-    }
-
     func getRecipes() {
         yummly.getAllRecipes()
    
