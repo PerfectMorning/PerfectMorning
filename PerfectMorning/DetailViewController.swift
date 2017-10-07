@@ -16,11 +16,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: selectedRecipe.imageUrl)
+        let url = URL(string: selectedRecipe.imageUrlsBySize)
         let data = try? Data(contentsOf: url!)
         imageView.image = UIImage(data: data!)
 
-        titleLabel.text = selectedRecipe.title
+        titleLabel.text = selectedRecipe.recipeName
 
     }
     

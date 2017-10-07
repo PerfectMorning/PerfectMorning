@@ -12,7 +12,12 @@ import SwiftyJSON
 
 class RecipeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var mainTableView: UITableView!
-    var recipes: [Recipe] = []
+    var recipes = Yummly.recipes
+    var quickRecipes  = Yummly.quickRecipes
+    var arrangeRecipes = Yummly.arrangeRecipes
+    var heighRecipes = Yummly.heighRecipes
+    var elegantRecipes = Yummly.elegantRecipes
+    var yummly = Yummly()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +54,14 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         print(recipes[indexPath.row])
 
         // Search and set recipeData from [indexPath.row]
-        selectedRecipe = Recipe(recipeId: recipes[indexPath.row].recipeId,
-                                socialRank: recipes[indexPath.row].socialRank,
-                                f2fUrl: recipes[indexPath.row].f2fUrl,
-                                title: recipes[indexPath.row].title,
-                                imageUrl: recipes[indexPath.row].imageUrl,
-                                publisher: recipes[indexPath.row].publisher,
-                                publisherUrl: recipes[indexPath.row].publisherUrl,
-                                sourceUrl: recipes[indexPath.row].sourceUrl
+        selectedRecipe = Recipe(recipeName: recipes[indexPath.row].recipeName,
+                                totalTimeInSeconds: recipes[indexPath.row].totalTimeInSeconds,
+                                id: recipes[indexPath.row].id,
+                                imageUrlsBySize: recipes[indexPath.row].imageUrlsBySize,
+                                ingredients: recipes[indexPath.row].ingredients
         )
         if selectedRecipe != nil {
             // Call segue to go to DetailViewController
-//            performSegue(withIdentifier: "toDetailViewController", sender: nil)
             performSegue(withIdentifier: "toDetailViewController",sender: nil)
         }
     }
@@ -75,30 +76,10 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func getRecipes() {
-        let url = "http://food2fork.com/api/search?key=\(Constants.food2ForkApiKey)&q=shredded%20"
-        let keyword = "chicken"
-        Alamofire.request(url + keyword)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
-                }
-                
-                let body = JSON(object)
-                var recipes: [Recipe] = []
-                for (_, recipe): (String, JSON) in body["recipes"] {
-                    recipes.append(Recipe(recipeId: recipe["recipe_id"].string!,
-                                          socialRank: recipe["social_rank"].int!,
-                                          f2fUrl: recipe["f2f_url"].string!,
-                                          title: recipe["title"].string!,
-                                          imageUrl: recipe["image_url"].string!,
-                                          publisher: recipe["publisher"].string!,
-                                          publisherUrl: recipe["publisher_url"].string!,
-                                          sourceUrl: recipe["source_url"].string!
-                    ))
-                }
-                self.recipes = recipes
-                self.mainTableView.reloadData()
-        }
+        yummly.getAllRecipes()
+   
+        self.mainTableView.reloadData()
+        
     }
 
 }
