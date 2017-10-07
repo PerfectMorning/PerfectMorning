@@ -51,10 +51,6 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
         menuCell.setCell(menu: menus[indexPath.row])
         return menuCell
     }
-    
-    var selectedMenu: Menu?
-    // When a cell is selected
-    func tableView(_ table: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     // When a button on a cell is selected 
     func onButtonTapped(position: Int) {

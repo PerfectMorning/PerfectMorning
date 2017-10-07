@@ -12,6 +12,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cooktimeLabel: UILabel!
+    @IBOutlet weak var favButton: UIButton!
+    @IBOutlet weak var overviewButton: UIButton!
+    @IBOutlet weak var ingredButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
 //    private let headerHeight: CGFloat = 300
 //    var headerImageView = imageView
