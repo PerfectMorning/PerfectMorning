@@ -103,12 +103,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khy-Wz-raA">
-                                        <rect key="frame" x="0.0" y="-64" width="375" height="350"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="375"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvd-1m-YE8">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <rect key="frame" x="0.0" y="63" width="375" height="300"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,6 +160,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GgC-TF-CQ3"/>
                     <connections>
+                        <outlet property="buttonGroupStack" destination="uIE-VS-Hgc" id="XWm-Pp-e97"/>
                         <outlet property="cooktimeLabel" destination="a0A-b4-6RK" id="MbZ-8a-pgs"/>
                         <outlet property="descriptionLabel" destination="aFO-yJ-m01" id="l2c-Dy-ixp"/>
                         <outlet property="detailView" destination="Khy-Wz-raA" id="xDT-MJ-Afi"/>
