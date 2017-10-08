@@ -42,8 +42,13 @@ class Helpers {
     }
 
     // Corner radius
-    static func AddCornerRadius(imageView: UIImageView, radius: CGFloat) {
+    static func addCornerRadius(imageView: UIImageView, radius: CGFloat) {
         imageView.layer.cornerRadius = radius
         imageView.clipsToBounds = true
+    }
+    
+    // Get position Y: the Y value right under the above view
+    static func getY(frame: CGRect) -> CGFloat {
+        return frame.origin.y + frame.size.height
     }
 }

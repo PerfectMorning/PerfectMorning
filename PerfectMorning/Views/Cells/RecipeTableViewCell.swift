@@ -29,7 +29,7 @@ class RecipeTableViewCell: UITableViewCell {
 
         let screenWidth = UIScreen.main.bounds.size.width
         recipeImageView.image = Helpers.cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth * 0.8))
-        Helpers.AddCornerRadius(imageView: recipeImageView, radius: 10)
+        Helpers.addCornerRadius(imageView: recipeImageView, radius: 10)
     
         // Title
         recipeTitleLavel.text = self.recipe?.recipeName
