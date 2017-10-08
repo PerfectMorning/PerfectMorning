@@ -24,6 +24,7 @@
 		A37835C61F89C50200F43A80 /* Yummly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37835C51F89C50200F43A80 /* Yummly.swift */; };
 		A3B074E11F80984900CCC977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B074DF1F80984800CCC977 /* LaunchScreen.storyboard */; };
 		A3B074E21F80984900CCC977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B074E01F80984900CCC977 /* Main.storyboard */; };
+		A3B1C4C91F8AB0BD006F9F76 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B1C4C81F8AB0BD006F9F76 /* Helpers.swift */; };
 		A3BED34D1F89978F004877B3 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BED34C1F89978F004877B3 /* RecipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A37835C51F89C50200F43A80 /* Yummly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yummly.swift; sourceTree = "<group>"; };
 		A3B074DF1F80984800CCC977 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3B074E01F80984900CCC977 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A3B1C4C81F8AB0BD006F9F76 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A3BED34C1F89978F004877B3 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeTableViewController.swift; path = PerfectMorning/RecipeTableViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 		A3BED34E1F899C12004877B3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A3B1C4C81F8AB0BD006F9F76 /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				6158BA081F8365D000C5485D /* MenuTableViewController.swift in Sources */,
 				A3BED34D1F89978F004877B3 /* RecipeTableViewController.swift in Sources */,
 				A30599C21F7F5CAE00BFC863 /* Constants.swift in Sources */,
+				A3B1C4C91F8AB0BD006F9F76 /* Helpers.swift in Sources */,
 				6158BA101F85671B00C5485D /* Menu.swift in Sources */,
 				A36F2FFA1F86E0DD00529D1E /* DetailViewController.swift in Sources */,
 				A32DA34D1F808B3E0077FA65 /* RecipeTableViewCell.swift in Sources */,
