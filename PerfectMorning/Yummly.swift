@@ -18,42 +18,50 @@ class Yummly {
     static var elegantRecipes: [Recipe] = []
     
     func getAllRecipes() {
-        let url = "http://api.yummly.com/v1/api/recipes?_app_id=\(Constants.yummlyApiId)&_app_key=\(Constants.yummlyApiKey)"
-        let keyword = "&allowedCourse[]=course^course-Breakfast&maxTotalTimeInSeconds=7200&maxResult=100&start=100"
+        let url = "https://api.yummly.com/v1/api/recipes"
+        let maxTime = "7200"
+        let course = "Breakfast"
+        let query = ["_app_id": Constants.yummlyApiId, "_app_key": Constants.yummlyApiKey, "maxTotalTimeInSeconds": maxTime, "allowedCourse[]": course]
         
-        Alamofire.request(url + keyword)
-            .responseJSON { response in
-                guard let object = response.result.value else {
-                    return
+        Alamofire.request(url, parameters: query).responseJSON { response in
+            guard let object = response.result.value else {
+                                    return
+                                }
+            let body = JSON(object)
+            for (_, recipes): (String, JSON) in body["matches"] {
+                var ingredients = [String]()
+                for ingredient in recipes["ingredients"].array! {
+                    ingredients.append(ingredient.string!)
                 }
-                
-                let body = JSON(object)
-                
-                for (_, recipes): (String, JSON) in body["matches"] {
-                    Yummly.recipes.append(Recipe(recipeName: recipes["recipeName"].string!,
-                                          totalTimeInSeconds: recipes["totalTimeInSeconds"].int!,
-                                          id: recipes["id"].string!,
-                                          imageUrlsBySize: recipes["imageUrlsBySize"].string!,
-                                          ingredients: [recipes["ingredients"].string!]
-                        
-                    ))
-                    self.separateForGenre(recipe: Yummly.recipes.last!)
-                    
+                let word = "=s90-c"
+                var img = recipes["imageUrlsBySize"]["90"].string!
+                if let range = img.range(of: word) {
+                        img.removeSubrange(range)
                 }
-                
-            
+                Yummly.recipes.append(Recipe(recipeName: recipes["recipeName"].string!,
+                                             totalTimeInSeconds: recipes["totalTimeInSeconds"].int!,
+                                             id: recipes["id"].string!,
+                                             imageUrlsBySize: img,
+                                             ingredients: ingredients
+                                    ))
+                self.separateForGenre(recipe: Yummly.recipes.last!)
+            }
+            print("quick : \(Yummly.quickRecipes)")
+            print("arrange: \(Yummly.arrangeRecipes)")
+            print("heigh: \(Yummly.heighRecipes)")
+            print("elegant :\(Yummly.elegantRecipes)")
         }
     }
     
-    func separateForGenre(recipe: Recipe){
+    func separateForGenre(recipe: Recipe) {
         let time = recipe.totalTimeInSeconds
-        if time <= 900{
+        if time <= 900 {
             Yummly.quickRecipes.append(recipe)
-        }else if time > 900 && time <= 1800{
+        } else if time <= 1800 {
             Yummly.arrangeRecipes.append(recipe)
-        }else if time > 1800 && time <= 3600{
+        } else if  time <= 3600 {
             Yummly.heighRecipes.append(recipe)
-        }else if time > 3600 && time <= 7200{
+        } else if  time <= 7200 {
             Yummly.elegantRecipes.append(recipe)
         }
     }

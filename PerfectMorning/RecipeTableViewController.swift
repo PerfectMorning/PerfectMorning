@@ -12,18 +12,14 @@ import SwiftyJSON
 
 class RecipeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var mainTableView: UITableView!
-    var recipes = Yummly.recipes
-    var quickRecipes  = Yummly.quickRecipes
-    var arrangeRecipes = Yummly.arrangeRecipes
-    var heighRecipes = Yummly.heighRecipes
-    var elegantRecipes = Yummly.elegantRecipes
+    var recipes = [Recipe]()
     var yummly = Yummly()
     var selectedRecipe: Recipe?
     var selectedMenu: Menu!
-
+    
     override func viewDidLoad() {
+       
         super.viewDidLoad()
-        title = selectedMenu.title
 
         mainTableView.rowHeight = 350
         mainTableView.frame = view.frame
@@ -34,7 +30,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         // Nib for RecipeTableViewCell
         let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         mainTableView.register(nib, forCellReuseIdentifier: "RecipeTableViewCell")
-        
+
         getRecipes()
     }
     
@@ -71,9 +67,19 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     func getRecipes() {
         yummly.getAllRecipes()
-   
+        title = selectedMenu.title
+        switch title {
+            case "Quick"?:
+            recipes = Yummly.quickRecipes
+            case "Arrange"?:
+                recipes = Yummly.arrangeRecipes
+            case "High"?:
+                recipes = Yummly.heighRecipes
+            case "Elegant"?:
+                recipes = Yummly.elegantRecipes
+            default:
+                recipes = []
+        }
         self.mainTableView.reloadData()
-        
     }
-
 }
