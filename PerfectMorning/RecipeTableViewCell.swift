@@ -20,7 +20,8 @@ class RecipeTableViewCell: UITableViewCell {
     }
     
     func update(recipe: Recipe) {
-        self.recipe = recipe;
+        self.recipe = recipe
+
         // Use image URL to call recipe image
         let url = URL(string: recipe.imageUrlsBySize)
         let data = try? Data(contentsOf: url!)
