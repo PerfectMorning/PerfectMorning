@@ -17,12 +17,11 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
     var selectedMenu: Menu!
     
     override func viewDidLoad() {
-       
         super.viewDidLoad()
+        title = selectedMenu.title
 
         mainTableView.rowHeight = 350
         mainTableView.frame = view.frame
-        view.addSubview(mainTableView)
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
@@ -30,7 +29,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         mainTableView.register(nib, forCellReuseIdentifier: "RecipeTableViewCell")
 
-        getRecipes()
+        getRecipes(title: title!)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,21 +63,24 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
             
         }
     }
-    func getRecipes() {
-        Yummly().getAllRecipes()
-        title = selectedMenu.title
-        switch title {
-            case "Quick"?:
-                recipes = Yummly.quickRecipes
-            case "Arrange"?:
-                recipes = Yummly.arrangeRecipes
-            case "High"?:
-                recipes = Yummly.heighRecipes
-            case "Elegant"?:
-                recipes = Yummly.elegantRecipes
-            default:
-                recipes = []
+    func getRecipes(title: String) {
+        Yummly().getAllRecipes { (recipes) in
+            // Excute when completion() is called
+            var recipeData: [Recipe]
+            switch title {
+                case "Quick":
+                    recipeData = Yummly.quickRecipes
+                case "Arrange":
+                    recipeData = Yummly.arrangeRecipes
+                case "High":
+                    recipeData = Yummly.highRecipes
+                case "Elegant":
+                    recipeData = Yummly.elegantRecipes
+                default:
+                    recipeData = []
+            }
+            self.recipes = recipeData
+            self.mainTableView.reloadData()
         }
-        self.mainTableView.reloadData()
     }
 }
