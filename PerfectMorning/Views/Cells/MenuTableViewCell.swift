@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol menuTableViewCellDelegate: class {
+    func onButtonTapped(position: Int)
+}
+
 class MenuTableViewCell: UITableViewCell {
     @IBOutlet var menuColorImage: UIImageView!
     @IBOutlet var menuView: UIImageView!
