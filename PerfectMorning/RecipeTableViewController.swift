@@ -13,7 +13,6 @@ import SwiftyJSON
 class RecipeTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var mainTableView: UITableView!
     var recipes = [Recipe]()
-    var yummly = Yummly()
     var selectedRecipe: Recipe?
     var selectedMenu: Menu!
     
@@ -66,11 +65,11 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     func getRecipes() {
-        yummly.getAllRecipes()
+        Yummly().getAllRecipes()
         title = selectedMenu.title
         switch title {
             case "Quick"?:
-            recipes = Yummly.quickRecipes
+                recipes = Yummly.quickRecipes
             case "Arrange"?:
                 recipes = Yummly.arrangeRecipes
             case "High"?:
