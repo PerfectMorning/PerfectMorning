@@ -117,7 +117,6 @@
 		A36F2FFD1F89750200529D1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A37835C51F89C50200F43A80 /* Yummly.swift */,
 				A3BED34C1F89978F004877B3 /* RecipeTableViewController.swift */,
 				6158BA071F8365D000C5485D /* MenuTableViewController.swift */,
 				A36F2FF91F86E0DD00529D1E /* DetailViewController.swift */,
@@ -136,6 +135,7 @@
 		A36F2FFF1F89751B00529D1E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A37835C51F89C50200F43A80 /* Yummly.swift */,
 				6158BA0D1F85671A00C5485D /* Menu.swift */,
 				A30599C51F7F661000BFC863 /* Recipe.swift */,
 			);

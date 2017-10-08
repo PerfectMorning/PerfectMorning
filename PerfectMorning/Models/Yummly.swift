@@ -14,10 +14,10 @@ class Yummly {
     static var recipes: [Recipe] = []
     static var quickRecipes: [Recipe] = []
     static var arrangeRecipes: [Recipe] = []
-    static var heighRecipes: [Recipe] = []
+    static var highRecipes: [Recipe] = []
     static var elegantRecipes: [Recipe] = []
     
-    func getAllRecipes() {
+    func getAllRecipes(completion: @escaping(_ recipes: [Recipe]) -> Void) {
         let url = "https://api.yummly.com/v1/api/recipes"
         let maxTime = "7200"
         let course = "Breakfast"
@@ -25,8 +25,8 @@ class Yummly {
         
         Alamofire.request(url, parameters: query).responseJSON { response in
             guard let object = response.result.value else {
-                                    return
-                                }
+                return
+            }
             let body = JSON(object)
             for (_, recipes): (String, JSON) in body["matches"] {
                 var ingredients = [String]()
@@ -46,9 +46,12 @@ class Yummly {
                                     ))
                 self.separateForGenre(recipe: Yummly.recipes.last!)
             }
+            // Called when the above for loop finished
+            completion(Yummly.recipes)
+
             print("quick : \(Yummly.quickRecipes)")
             print("arrange: \(Yummly.arrangeRecipes)")
-            print("heigh: \(Yummly.heighRecipes)")
+            print("high: \(Yummly.highRecipes)")
             print("elegant :\(Yummly.elegantRecipes)")
         }
     }
@@ -60,7 +63,7 @@ class Yummly {
         } else if time <= 1800 {
             Yummly.arrangeRecipes.append(recipe)
         } else if  time <= 3600 {
-            Yummly.heighRecipes.append(recipe)
+            Yummly.highRecipes.append(recipe)
         } else if  time <= 7200 {
             Yummly.elegantRecipes.append(recipe)
         }
