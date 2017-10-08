@@ -13,11 +13,11 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     var menus: [Menu] = []
     var selectedMenu: Menu?
     var selectedPosition: Int?
+    var yummly =  Yummly()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Menu"
-
         menuTableView.rowHeight = 150
         menuTableView.frame = view.frame
         view.addSubview(menuTableView)

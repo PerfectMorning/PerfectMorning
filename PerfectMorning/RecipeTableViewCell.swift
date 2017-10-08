@@ -20,12 +20,13 @@ class RecipeTableViewCell: UITableViewCell {
     }
     
     func update(recipe: Recipe) {
-        self.recipe = recipe;
+        self.recipe = recipe
+
         // Use image URL to call recipe image
         let url = URL(string: recipe.imageUrlsBySize)
         let data = try? Data(contentsOf: url!)
         let image = UIImage(data: data!)
-
+        
         let screenWidth = UIScreen.main.bounds.size.width
         recipeImageView.image = cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth * 0.8))
         
