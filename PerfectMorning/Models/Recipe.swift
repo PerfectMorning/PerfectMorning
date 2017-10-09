@@ -13,5 +13,9 @@ struct Recipe {
     var totalTimeInSeconds: Int
     var id: String
     var imageUrlsBySize: String
-    var ingredients: [String] 
+    var ingredients: [String]
+    var rating: String
+    var sourceDisplayName: String
+    var cuisine: [String]    
 }
+
