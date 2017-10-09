@@ -51,7 +51,10 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
                                 totalTimeInSeconds: recipes[indexPath.row].totalTimeInSeconds,
                                 id: recipes[indexPath.row].id,
                                 imageUrlsBySize: recipes[indexPath.row].imageUrlsBySize,
-                                ingredients: recipes[indexPath.row].ingredients
+                                ingredients: recipes[indexPath.row].ingredients,
+                                rating: recipes[indexPath.row].rating,
+                                sourceDisplayName: recipes[indexPath.row].sourceDisplayName,
+                                cuisine:recipes[indexPath.row].cuisine
         )
         selectedRecipe = recipes[indexPath.row]
         if selectedRecipe != nil {

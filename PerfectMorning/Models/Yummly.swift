@@ -39,16 +39,19 @@ class Yummly {
                         img.removeSubrange(range)
                 }
                 var cuisines = [String]()
-                for cuisine in recipes["attributes"]["cousine"].array!{
-                        cuisines.append(cuisine.string!)
+                for (_,attr) in recipes["attributes"]{
+                    if attr.count != 0{
+                        for cuisine in Array(attr["cousine"]) {
+                                cuisines.append(cuisine.0)
+                        }
+                    }
                 }
-               
                 Yummly.recipes.append(Recipe(recipeName: recipes["recipeName"].string!,
                                              totalTimeInSeconds: recipes["totalTimeInSeconds"].int!,
                                              id: recipes["id"].string!,
                                              imageUrlsBySize: img,
                                              ingredients: ingredients,
-                                             rating: recipes["rating"].string!,
+                                             rating: recipes["rating"].int!,
                                              sourceDisplayName: recipes["sourceDisplayName"].string!,
                                              cuisine: cuisines
                                     ))
