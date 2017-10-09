@@ -13,12 +13,13 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     var menus: [Menu] = []
     var selectedMenu: Menu?
     var selectedPosition: Int?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Menu"
-
-        menuTableView.rowHeight = 150
+        let navHeight = (self.navigationController?.navigationBar.intrinsicContentSize.height)! + 20
+        menuTableView.rowHeight = (self.view.frame.size.height - navHeight)*0.25
         menuTableView.frame = view.frame
         view.addSubview(menuTableView)
         menuTableView.dataSource = self
@@ -51,7 +52,7 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
         menuCell.setCell(menu: menus[indexPath.row])
         return menuCell
     }
-
+    
     // When a button on a cell is selected 
     func onButtonTapped(position: Int) {
         // Set selected menu data

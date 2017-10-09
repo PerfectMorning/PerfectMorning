@@ -39,5 +39,10 @@ class MenuTableViewCell: UITableViewCell {
         self.menuTitleButton.tintColor = UIColor.white
         self.menuArrowButton.setImage(#imageLiteral(resourceName: "arrow_right"), for: .normal)
         self.menuArrowButton.tintColor = UIColor.white
+        
+        let screenWidth = UIScreen.main.bounds.size.width
+        menuImage.image = Helpers.cropImage(image: menu.image, w: Int(screenWidth), h: Int(UIScreen.main.bounds.size.height*0.25))
+        Helpers.addCornerRadius(imageView: menuImage, radius: 10)
+        Helpers.addCornerRadius(imageView:menuColorImage, radius: 10)
     }
 }
