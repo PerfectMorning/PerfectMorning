@@ -20,7 +20,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         title = selectedMenu.title
 
-        mainTableView.rowHeight = 350
+        mainTableView.rowHeight = 430
         mainTableView.frame = view.frame
         mainTableView.delegate = self
         mainTableView.dataSource = self
