@@ -10,9 +10,9 @@ import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImageView: UIImageView!
-    @IBOutlet weak var recipeTitleLavel: UILabel!
-    @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var favoriteLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cooktimeLabel: UILabel!
+    @IBOutlet weak var fabButton: UIButton!
     var recipe: Recipe?
 
     override func awakeFromNib() {
@@ -21,20 +21,40 @@ class RecipeTableViewCell: UITableViewCell {
     
     func update(recipe: Recipe) {
         self.recipe = recipe
+        
+        let screenWidth = UIScreen.main.bounds.size.width
 
-        // Use image URL to call recipe image
+        
+        // Recipe image view
+        recipeImageView.frame.origin.x = 20
+        recipeImageView.frame.origin.y = 20
         let url = URL(string: recipe.imageUrlsBySize)
         let data = try? Data(contentsOf: url!)
-        let image = UIImage(data: data!)
-
-        let screenWidth = UIScreen.main.bounds.size.width
-        recipeImageView.image = Helpers.cropImage(image: image!, w: Int(screenWidth), h: Int(screenWidth * 0.8))
+        recipeImageView.image = Helpers.cropImage(image: UIImage(data: data!)!, w: Int(screenWidth - 40), h: Int(screenWidth - 40))
         Helpers.addCornerRadius(imageView: recipeImageView, radius: 10)
+        recipeImageView.sizeToFit()
     
-        // Title
-        recipeTitleLavel.text = self.recipe?.recipeName
-        likeLabel.text = "0 Likes"
-        favoriteLabel.text = "💛"
+        // Fav button
+        fabButton.frame.origin.x = screenWidth - 68
+        fabButton.frame.origin.y = Helpers.getY(frame: recipeImageView.frame) + 10
+        fabButton.frame.size.width = 48
+        fabButton.frame.size.height = 48
+        let favIcon = UIImage(named: "fav_heart")?.withRenderingMode(.alwaysTemplate)
+        fabButton.setImage(favIcon, for: .normal)
+        fabButton.tintColor = Color.lemonColor
+    
+        // Recipe title label
+        titleLabel.frame.origin.x = 20
+        titleLabel.frame.origin.y = Helpers.getY(frame: recipeImageView.frame) + 10
+        titleLabel.frame.size.width = fabButton.frame.origin.x - 30
+        titleLabel.numberOfLines = 0
+        titleLabel.text = self.recipe?.recipeName
+        titleLabel.sizeToFit()
+        
+        // Recipe cooktime label
+        cooktimeLabel.frame.origin.x = 20
+        cooktimeLabel.frame.origin.y = Helpers.getY(frame: titleLabel.frame) + 10
+        cooktimeLabel.text = "\(recipe.totalTimeInSeconds / 60) mins"
+        cooktimeLabel.sizeToFit()
     }
-
 }
