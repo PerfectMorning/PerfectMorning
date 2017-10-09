@@ -38,12 +38,19 @@ class Yummly {
                 if let range = img.range(of: word) {
                         img.removeSubrange(range)
                 }
+                var cuisines = [String]()
+                for cuisine in recipes["attributes"]["cousine"].array!{
+                        cuisines.append(cuisine.string!)
+                }
                
                 Yummly.recipes.append(Recipe(recipeName: recipes["recipeName"].string!,
                                              totalTimeInSeconds: recipes["totalTimeInSeconds"].int!,
                                              id: recipes["id"].string!,
                                              imageUrlsBySize: img,
-                                             ingredients: ingredients
+                                             ingredients: ingredients,
+                                             rating: recipes["rating"].string!,
+                                             sourceDisplayName: recipes["sourceDisplayName"].string!,
+                                             cuisine: cuisines
                                     ))
                 self.separateForGenre(recipe: Yummly.recipes.last!)
             }
