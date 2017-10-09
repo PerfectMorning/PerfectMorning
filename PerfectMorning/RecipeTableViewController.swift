@@ -64,7 +64,7 @@ class RecipeTableViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     func getRecipes(title: String) {
-        Yummly().getAllRecipes { (recipes) in
+        Yummly.getAllRecipes { (recipes) in
             // Excute when completion() is called
             var recipeData: [Recipe]
             switch title {
