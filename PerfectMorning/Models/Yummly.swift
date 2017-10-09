@@ -17,7 +17,7 @@ class Yummly {
     static var highRecipes: [Recipe] = []
     static var elegantRecipes: [Recipe] = []
     
-    func getAllRecipes(completion: @escaping(_ recipes: [Recipe]) -> Void) {
+    static func getAllRecipes(completion: @escaping(_ recipes: [Recipe]) -> Void) {
         let url = "https://api.yummly.com/v1/api/recipes"
         let maxTime = "7200"
         let course = "Breakfast"
@@ -38,6 +38,7 @@ class Yummly {
                 if let range = img.range(of: word) {
                         img.removeSubrange(range)
                 }
+               
                 Yummly.recipes.append(Recipe(recipeName: recipes["recipeName"].string!,
                                              totalTimeInSeconds: recipes["totalTimeInSeconds"].int!,
                                              id: recipes["id"].string!,
@@ -48,15 +49,14 @@ class Yummly {
             }
             // Called when the above for loop finished
             completion(Yummly.recipes)
-
-            print("quick : \(Yummly.quickRecipes)")
-            print("arrange: \(Yummly.arrangeRecipes)")
-            print("high: \(Yummly.highRecipes)")
-            print("elegant :\(Yummly.elegantRecipes)")
+            Yummly.arrangeRecipes = []
+            Yummly.quickRecipes = []
+            Yummly.highRecipes = []
+            Yummly.elegantRecipes = []
         }
     }
     
-    func separateForGenre(recipe: Recipe) {
+    static func separateForGenre(recipe: Recipe) {
         let time = recipe.totalTimeInSeconds
         if time <= 900 {
             Yummly.quickRecipes.append(recipe)
