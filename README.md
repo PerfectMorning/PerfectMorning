@@ -54,7 +54,7 @@ $ touch APIKeys.swift
 - Add the below codes on the APIKeys.swift
 ```swift
 struct APIKeys {
-    static let Food2ForkApiKey = "YOUR API KEY"
+    static let yummlyApiKey = "YOUR API KEY"
 }
 ```
 then, build it!
