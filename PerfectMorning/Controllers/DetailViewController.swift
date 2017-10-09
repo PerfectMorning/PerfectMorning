@@ -26,14 +26,20 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
 
         let screenWidth = UIScreen.main.bounds.size.width
         
+        
         // Recipe imageView
         let url = URL(string: selectedRecipe.imageUrlsBySize)
         let data = try? Data(contentsOf: url!)
         imageView.image = Helpers.cropImage(image: UIImage(data: data!)!, w: Int(screenWidth), h: Int(screenWidth * 0.8))
+        imageView.frame.size.height = screenWidth*0.8
+        imageView.frame.size.width = screenWidth
+        imageView.frame.origin.x = 0
+        
+        imageView.sizeToFit()
         
         // Fav button
         favButton.frame.origin.x = screenWidth - 80
-        favButton.frame.origin.y = Helpers.getY(frame: imageView.frame) - 44
+        favButton.frame.origin.y = Helpers.getY(frame: imageView.frame) + 20
         favButton.frame.size.width = 60
         favButton.frame.size.height = 60
         let favIcon = UIImage(named: "fav_heart")?.withRenderingMode(.alwaysTemplate)
@@ -42,7 +48,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         // Recipe title label
         titleLabel.frame.origin.x = 20
-        titleLabel.frame.origin.y = Helpers.getY(frame: imageView.frame) - 44
+        titleLabel.frame.origin.y = Helpers.getY(frame: imageView.frame) + 20
         titleLabel.frame.size.width = favButton.frame.origin.x - 30
         titleLabel.numberOfLines = 0
         titleLabel.text = selectedRecipe.recipeName
