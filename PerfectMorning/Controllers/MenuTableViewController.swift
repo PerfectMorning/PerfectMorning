@@ -35,7 +35,7 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     func setMenu(){
         menus.append(Menu(title:"Quick", image: #imageLiteral(resourceName: "menu_fast"), color: Color.lemonColor))
         menus.append(Menu(title:"Arrange", image: #imageLiteral(resourceName: "menu_arrange"), color: Color.apricotColor))
-        menus.append(Menu(title:"High", image: #imageLiteral(resourceName: "menu_high"), color: Color.valenciaColor))
+        menus.append(Menu(title:"Slow", image: #imageLiteral(resourceName: "menu_high"), color: Color.valenciaColor))
         menus.append(Menu(title:"Elegant", image: #imageLiteral(resourceName: "menu_elegant"), color: Color.raspberryColor))
     }
 

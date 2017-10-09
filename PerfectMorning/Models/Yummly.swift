@@ -21,7 +21,8 @@ class Yummly {
         let url = "https://api.yummly.com/v1/api/recipes"
         let maxTime = "7200"
         let course = "Breakfast"
-        let query = ["_app_id": Constants.yummlyApiId, "_app_key": Constants.yummlyApiKey, "maxTotalTimeInSeconds": maxTime, "allowedCourse[]": course]
+        let count = "100"
+        let query = ["_app_id": Constants.yummlyApiId, "_app_key": Constants.yummlyApiKey, "maxTotalTimeInSeconds": maxTime, "allowedCourse[]": course, "maxResult": count, "start": count]
         
         Alamofire.request(url, parameters: query).responseJSON { response in
             guard let object = response.result.value else {
@@ -68,7 +69,7 @@ class Yummly {
     
     static func separateForGenre(recipe: Recipe) {
         let time = recipe.totalTimeInSeconds
-        if time <= 900 {
+        if time <= 600 {
             Yummly.quickRecipes.append(recipe)
         } else if time <= 1800 {
             Yummly.arrangeRecipes.append(recipe)
