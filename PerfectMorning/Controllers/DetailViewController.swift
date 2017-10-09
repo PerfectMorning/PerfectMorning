@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var buttonGroupStack: UIStackView!
     @IBOutlet weak var overviewButton: UIButton!
     @IBOutlet weak var ingredButton: UIButton!
+    @IBOutlet weak var descHeaderLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
     var selectedRecipe: Recipe!
@@ -33,6 +34,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         // Fav button
         favButton.frame.origin.x = screenWidth - 80
         favButton.frame.origin.y = Helpers.getY(frame: imageView.frame) - 44
+        favButton.frame.size.width = 60
+        favButton.frame.size.height = 60
+        let favIcon = UIImage(named: "fav_heart")?.withRenderingMode(.alwaysTemplate)
+        favButton.setImage(favIcon, for: .normal)
+        favButton.tintColor = Color.lemonColor
         
         // Recipe title label
         titleLabel.frame.origin.x = 20
@@ -45,7 +51,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         // Recipe cooktime label
         cooktimeLabel.frame.origin.x = 20
         cooktimeLabel.frame.origin.y = Helpers.getY(frame: titleLabel.frame) + 10
-        cooktimeLabel.text = String(selectedRecipe.totalTimeInSeconds)
+        cooktimeLabel.text = "\(selectedRecipe.totalTimeInSeconds / 60) mins"
         cooktimeLabel.sizeToFit()
         
         // Button group stack view
@@ -57,20 +63,35 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         overviewButton.frame.origin.y = Helpers.getY(frame: buttonGroupStack.frame)
         overviewButton.frame.size.width = screenWidth / 2 - 5
         overviewButton.sizeToFit()
-
         
         // Recipe ingredients button
         ingredButton.frame.origin.x = screenWidth / 2 + 5
         ingredButton.frame.origin.y = Helpers.getY(frame: buttonGroupStack.frame)
         ingredButton.sizeToFit()
         
-        // Recipe discription label
+        // Recipe description header label
+        descHeaderLabel.frame.origin.x = 20
+        descHeaderLabel.frame.origin.y = Helpers.getY(frame: buttonGroupStack.frame) + 10
+        descHeaderLabel.frame.size.width = screenWidth - 20
+        descHeaderLabel.numberOfLines = 0
+        descHeaderLabel.text = "Ingredients"
+        descHeaderLabel.sizeToFit()
+        
+        // Recipe description label
         descriptionLabel.frame.origin.x = 20
-        descriptionLabel.frame.origin.y = Helpers.getY(frame: buttonGroupStack.frame) + 10
+        descriptionLabel.frame.origin.y = Helpers.getY(frame: descHeaderLabel.frame) + 5
         descriptionLabel.frame.size.width = screenWidth - 20
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = "TODO: \nget descriptions from data"
+        showIngredients(label: descriptionLabel, data: selectedRecipe.ingredients)
         descriptionLabel.sizeToFit()
     }
 
+    private func showIngredients(label: UILabel, data: [String]) {
+        for d in data {
+            label.text?.append("    \(d)\n")
+        }
+    }
+    
+    private func showOverview() {
+    }
 }
