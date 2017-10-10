@@ -1,6 +1,8 @@
 # PerfectMorning
 An iOS app for breakfast recipes.
 
+![App_UI](https://raw.githubusercontent.com/PerfectMorning/PerfectMorning/master/readme_hero.jpg)
+
 
 ## How to build our App with Xcode
 
@@ -40,12 +42,12 @@ $ carthage update --platform iOS
 ```
 
 
-### Add your Food2Fork API key
+### Add your Yummly ID and API key
 
-- Sign in and get your Food2Fork API key
-https://food2fork.com/about/api[https://food2fork.com/about/api]
+- Get your Yummly ID and API key
+https://developer.yummly.com/
 
-- Make  APIKeys.swift under PerfectMorning/PerfectMorning/
+- Make APIKeys.swift under PerfectMorning/PerfectMorning/
 ```
 $ cd PerfectMorning
 $ touch APIKeys.swift
@@ -54,6 +56,7 @@ $ touch APIKeys.swift
 - Add the below codes on the APIKeys.swift
 ```swift
 struct APIKeys {
+    static let yummlyApiId = "YOUR YUMMLY ID"
     static let yummlyApiKey = "YOUR API KEY"
 }
 ```
